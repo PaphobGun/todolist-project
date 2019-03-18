@@ -1,0 +1,116 @@
+.list {
+
+    grid-row: list-start / list-end;
+    grid-column: 2 / 3;
+
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+    &__completed:before {
+
+        content: 'Completed';
+        color: $color-check;
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+        
+    }
+
+    &__todo:before {
+
+        content: 'To do';
+        color: $color-bg-1;
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+
+    }
+
+    &__todo .list__li {
+
+        border: .2rem solid $color-bg-2;
+        
+    }
+
+    &__li {
+
+        display: flex;
+        justify-content: flex-end;
+        
+        margin-top: 1rem;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        list-style: none;
+        font-size: 1.8rem;
+        color: $color-text;
+        background: $color-white;
+        box-shadow: $color-shadow;
+        border-radius: .5rem;
+        
+    }
+
+
+    &__del {
+
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: 1rem;
+        transition: all .2s ease;
+
+    }
+
+    &__del:hover {
+
+        color: $color-delete;
+        transform: scale(1.2);
+
+    }
+
+    &__del:active {
+
+        transform: scale(1.2) translateY(.2rem);
+
+    }
+
+    &__check {
+
+        cursor: pointer;
+        transition: all .2s ease;
+
+    }
+
+    &__check:hover {
+
+        color: $color-check;
+        transform: scale(1.2);
+
+    }
+
+    &__check:active {
+
+        transform: scale(1.2) translateY(.2rem);
+
+    }
+
+    &__completed .list__li .list__check {
+
+        color: $color-check;
+
+    }
+
+    &__completed .list__li {
+
+    border: .2rem solid $color-check;
+
+    }
+
+    &__p {
+
+        margin-right: auto;
+        
+    }
+
+
+
+}

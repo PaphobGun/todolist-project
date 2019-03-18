@@ -1,0 +1,33 @@
+.header {
+
+    grid-row: header-start / header-end;
+    grid-column: 2/3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__h1 {
+
+        font-weight: 700;
+        font-size: 6rem;
+        text-transform: uppercase;
+        background: -webkit-linear-gradient($color-bg-1, $color-bg-2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+
+    &__h3 {
+
+        font-size: 3rem;
+        text-transform: uppercase;
+        background: -webkit-linear-gradient($color-month-1, $color-month-2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+
+    }
+
+}  
