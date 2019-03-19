@@ -23,6 +23,9 @@ export const addItem = value => {
 
 // DELETE ITEM FROM DATA BASE
 export const deleteItem = e => {
+  // destructuring
+  const { todo, completed } = data;
+
   // get string from li
   const value = e.target.parentNode.innerText;
   // get id of ul
@@ -31,9 +34,10 @@ export const deleteItem = e => {
   // If id of ul of selected li is 'todo' remove it from Database [todo]
   // If id of ul of selected li is 'completed' remove it from Database [completed]
   if (id === 'todo') {
-    data.todo = data.todo.filter(item => item !== value);
+    // find the index of the selected value and remove it from the array
+    todo.splice(todo.indexOf(value), 1);
   } else {
-    data.completed = data.completed.filter(item => item !== value);
+    completed.splice(completed.indexOf(value), 1);
   }
   // save it to localStorage
   dataObjectUpdated();
@@ -41,6 +45,9 @@ export const deleteItem = e => {
 
 // TOGGLE COMPLETED ITEM TO DATA
 export const toggleCompleted = e => {
+  // destructuring
+  const { todo, completed } = data;
+
   // get string from li
   const value = e.target.parentNode.innerText;
   // get id of ul
@@ -49,13 +56,14 @@ export const toggleCompleted = e => {
   // If id of ul of selected li is 'todo' remove it from Database [todo]
   // If id of ul of selected li is 'completed' remove it from Database [completed]
   if (id === 'todo') {
-    data.todo = data.todo.filter(item => item !== value);
+    // find the index of the selected value and remove it from the array
+    todo.splice(todo.indexOf(value), 1);
     // move to completed list
-    data.completed.push(value);
+    completed.push(value);
   } else {
-    data.completed = data.completed.filter(item => item !== value);
+    completed.splice(completed.indexOf(value), 1);
     // move to todo list
-    data.todo.push(value);
+    todo.push(value);
   }
 
   // save it to localStorage

@@ -3,7 +3,7 @@ $bp-largest: 75em; //1200px/16px = 75em ( 1em =16px)
 $bp-large: 62.5em; //1000px
 $bp-medium: 50em; //800px
 $bp-small: 41.875em; //670px
- 
+
 // FONTS
 $font-primary: 'Ubuntu', sans-serif;
 
@@ -17,66 +17,49 @@ $color-delete: #bc3427;
 $color-check: #2faa4a;
 $color-month-1: #f4a6e9;
 $color-month-2: #cc55bb;
-$color-shadow: 0 .1rem .5rem rgba(104, 104, 104, 0.8);
+$color-shadow: 0 0.1rem 0.5rem rgba(104, 104, 104, 0.8);
 
 *,
 *::before,
 *::after {
-  margin:0;
+  margin: 0;
   padding: 0;
   box-sizing: inherit;
 }
 
 html {
   box-sizing: border-box;
-  font-family: $font-primary; 
+  font-family: $font-primary;
   font-size: 62.5%; // 1 rem = 10 px
   font-weight: 400;
 
   @media only screen and (max-width: $bp-small) {
-
     font-size: 50%;
-
   }
-
 }
- 
+
 body {
-  background-image: linear-gradient(to bottom right, $color-bg-1, $color-bg-2);
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  background: $color-base;
 }
 
 .wrapper {
-
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: 15rem 1fr 15rem;
   grid-template-rows: [header-start] 15rem [header-end form-start] 5rem [form-end list-start] 1fr [list-end];
 
-
-  background: $color-base;
   max-width: 120rem;
   min-height: 90vh;
   margin: 4rem auto;
   border-radius: 1rem;
 
   @media only screen and (max-width: $bp-largest) {
-
     margin: 0;
     min-height: 100vh;
     border-radius: 0;
-
   }
 
   @media only screen and (max-width: $bp-small) {
-
     grid-template-columns: 2rem 1fr 2rem;
-
   }
-
-
 }
-
- 

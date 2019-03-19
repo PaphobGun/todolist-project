@@ -8,23 +8,6 @@ import '../scss/main.scss';
 // Render todo and completed list from localstorage
 listView.renderTodoList();
 
-// Input field controller
-// Handle click event on Add Button
-elements.addBtn.addEventListener('click', e => {
-  // Get input
-  const value = inputView.getInput();
-  e.preventDefault();
-  // If there is an input
-  if (value) {
-    // render that list
-    listView.renderList(value);
-    // clear the input form to be empty
-    inputView.clearInput();
-    // Add todo list to Database
-    list.addItem(value);
-  }
-});
-
 // Handle Enter event on input form
 elements.inputForm.addEventListener('keydown', e => {
   const value = inputView.getInput();

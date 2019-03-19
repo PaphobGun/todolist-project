@@ -67,11 +67,14 @@ const renderCompFromLocal = value => {
 
 // Render from local storage
 export const renderTodoList = () => {
+  // destructuring
+  const { todo, completed } = data;
+
   // If Database is empty ( Nothing on localStorage ) just leave this function
-  if (!data.todo.length && !data.completed.length) return;
+  if (!todo.length && !completed.length) return;
 
   // Iterate over the todo [array] in Database
-  data.todo.forEach(item => {
+  todo.forEach(item => {
     // get the string ( todo item )
     let value = item;
     // render every todo item in the array
@@ -79,7 +82,7 @@ export const renderTodoList = () => {
   });
 
   // Iterate over the completed [array] in Database
-  data.completed.forEach(item => {
+  completed.forEach(item => {
     // get the string ( completed item )
     let value = item;
     // render every completed item in the array
